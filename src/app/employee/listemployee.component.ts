@@ -10,7 +10,7 @@ export class ListemployeeComponent implements OnInit {
   employees: Employee[] = [
     {
       id: 1,
-      name: 'jon',
+      name: 'Jon',
       gender: 'male',
       email: 'jon@gmail.com',
       phoneNumber: '9874561238',
