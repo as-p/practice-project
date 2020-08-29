@@ -40,7 +40,7 @@ export class ListemployeeComponent implements OnInit {
       phoneNumber: '9785641254',
       contactPreference: 'Email',
       dateOfBirth: new Date('08/27/1994'),
-      department: 'Computer',
+      department: 'Payroll',
       isActive: true,
       photoPath: 'assets/image/dany.png',
     },

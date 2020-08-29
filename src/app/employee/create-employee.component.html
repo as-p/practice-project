@@ -4,22 +4,30 @@
       <h3 class="panel-title">Create Employee</h3>
     </div>
     <div class="panel-body">
-      <div class="form-group">
-        <label for="fullName">Full Name</label
+      <div
+        class="form-group"
+        [class.has-error]="name.invalid && name.touched"
+        [class.has-success]="name.valid"
+      >
+        <label class="control-label" for="name">Full Name</label
         ><input
+          required
           type="text"
-          ngModel
-          name="fullName"
+          name="name"
+          [(ngModel)]="employee.name"
+          #name="ngModel"
           class="form-control"
-          id="fullName"
-        />
+          id="name"
+        /><span class="help-block" *ngIf="name.invalid && name.touched"
+          >Full Name is Required</span
+        >
       </div>
       <div class="form-group">
         <label for="email">Email</label
         ><input
-          type="text"
-          ngModel
           name="email"
+          [(ngModel)]="employee.email"
+          type="text"
           class="form-control"
           id="email"
         />
@@ -29,7 +37,7 @@
         <label for="phoneNumber">Phone Number</label
         ><input
           type="text"
-          ngModel
+          [(ngModel)]="employee.phoneNumber"
           name="phoneNumber"
           class="form-control"
           id="phoneNumber"
@@ -41,7 +49,7 @@
           <label class="radio-inline"
             ><input
               id="contactPreference"
-              ngModel
+              [(ngModel)]="employee.contactPreference"
               name="contactPreference"
               type="radio"
               value="Email"
@@ -49,7 +57,7 @@
           >
           <label class="radio-inline"
             ><input
-              ngModel
+              [(ngModel)]="employee.contactPreference"
               name="contactPreference"
               type="radio"
               value="Phone"
@@ -64,7 +72,7 @@
           <label class="radio-inline"
             ><input
               id="gender"
-              ngModel
+              [(ngModel)]="employee.gender"
               name="gender"
               type="radio"
               value="male"
@@ -72,7 +80,7 @@
           >
           <label class="radio-inline"
             ><input
-              ngModel
+              [(ngModel)]="employee.gender"
               name="gender"
               type="radio"
               value="female"
@@ -80,11 +88,84 @@
           >
         </div>
       </div>
+      <div class="form-group">
+        <div class="form-control">
+          <label class="checkbox-inline"
+            ><input
+              id="isActive"
+              [(ngModel)]="employee.isActive"
+              name="isActive"
+              type="checkbox"
+            />Is Active</label
+          >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="department">Department</label
+        ><select
+          [(ngModel)]="employee.department"
+          name="department"
+          id="department"
+          class="form-control"
+        >
+          <option *ngFor="let dept of department" [value]="dept.id">
+            {{ dept.name }}
+          </option>
+        </select>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-5">
+          <label for="dateOfBirth">Date Of Birth</label
+          ><input
+            type="text"
+            [bsConfig]="bsConfig"
+            bsDatepicker
+            [(ngModel)]="employee.dateOfBirth"
+            name="dateOfBirth"
+            placement="right"
+            class="form-control"
+            id="dateOfBirth"
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="photoPath">Photo Path</label
+        ><input
+          type="text"
+          [(ngModel)]="employee.photoPath"
+          name="photoPath"
+          class="form-control"
+          id="photoPath"
+        />
+      </div>
+      <div class="form-group">
+        <button
+          class="btn btn-primary"
+          type="button"
+          (click)="togglePhotoPreview()"
+        >
+          {{ previePhoto ? "Hide " : "Show " }}Preview
+        </button>
+      </div>
+      <div class="form-group">
+        <img
+          class="img-responsive"
+          [src]="employee.photoPath"
+          height="200"
+          width="200"
+          *ngIf="previePhoto"
+        />
+      </div>
     </div>
+
     <div class="panel-footer">
       <button class="btn btn-primary" type="submit">Save</button>
     </div>
   </div>
 </form>
 
-{{ employeeForm.value | json }}
+Form value{{ employeeForm.value | json }} <br /><br />
+fieild value{{ employee | json }}
