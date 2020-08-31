@@ -1,6 +1,6 @@
 import { Employee } from './../models/employee.model';
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 
 @Component({
@@ -14,15 +14,17 @@ export class CreateEmployeeComponent implements OnInit {
   previePhoto: boolean = false;
   employee: Employee = {
     id: null,
-    name: null,
-    gender: null,
-    email: null,
-    phoneNumber: null,
-    contactPreference: null,
+    name: '',
+    gender: '',
+    email: '',
+    phoneNumber: '',
+    contactPreference: '',
     dateOfBirth: null,
-    department: null,
+    department: '',
     isActive: null,
-    photoPath: null,
+    photoPath: '',
+    password: '',
+    confirmPassword: '',
   };
 
   department = [
@@ -40,7 +42,7 @@ export class CreateEmployeeComponent implements OnInit {
         containerClass: 'theme-dark-blue',
         adaptivePosition: true,
         dateInputFormat: 'DD-MM-YYYY',
-        minDate: new Date(2018, 0, 1),
+        // minDate: new Date(2018, 0, 1),
       }
     );
   }
