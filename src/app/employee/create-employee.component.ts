@@ -10,7 +10,7 @@ import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 })
 export class CreateEmployeeComponent implements OnInit {
   bsConfig: Partial<BsDatepickerConfig>;
-  photoPath = 'assets/image/dany.png';
+
   previePhoto: boolean = false;
   employee: Employee = {
     id: null,

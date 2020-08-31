@@ -1,3 +1,4 @@
+import { ConfirmPasswordValidator } from './employee/shared/confirm-validator.directive';
 import { SelectValidatorDirective } from './employee/shared/select-validator.directive';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,9 +18,10 @@ import { CreateEmployeeComponent } from './employee/create-employee.component';
     ListemployeeComponent,
     CreateEmployeeComponent,
     SelectValidatorDirective,
+    ConfirmPasswordValidator,
   ],
   imports: [
-    BrowserModule,    
+    BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
@@ -27,7 +29,7 @@ import { CreateEmployeeComponent } from './employee/create-employee.component';
     BsDatepickerModule.forRoot(),
     BrowserAnimationsModule,
   ],
-  providers:[],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

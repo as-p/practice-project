@@ -275,6 +275,13 @@
           *ngIf="confirmPasscode.invalid && confirmPasscode.touched"
           >Confirm Password is Required</span
         >
+        <span
+          class="help-block"
+          *ngIf="
+            confirmPasscode.errors?.confirmValidator && confirmPasscode.touched
+          "
+          >Confirm Password is Required</span
+        >
       </div>
     </div>
 
