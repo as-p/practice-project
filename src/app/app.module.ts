@@ -1,3 +1,4 @@
+import { CanDeactiveGaurdService } from './employee/cemp-can-deactive-gaurd.service';
 import { ConfirmPasswordValidator } from './employee/shared/confirm-validator.directive';
 import { SelectValidatorDirective } from './employee/shared/select-validator.directive';
 
@@ -11,6 +12,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListemployeeComponent } from './employee/listemployee.component';
 import { CreateEmployeeComponent } from './employee/create-employee.component';
+import { DisplayEmployeeDetailsComponent } from './employee/display-employee-details.component';
+import { EmployeeDetailsComponent } from './employee/employee-details.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,8 @@ import { CreateEmployeeComponent } from './employee/create-employee.component';
     CreateEmployeeComponent,
     SelectValidatorDirective,
     ConfirmPasswordValidator,
+    DisplayEmployeeDetailsComponent,
+    EmployeeDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +34,7 @@ import { CreateEmployeeComponent } from './employee/create-employee.component';
     BsDatepickerModule.forRoot(),
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [CanDeactiveGaurdService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
