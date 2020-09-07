@@ -43,7 +43,7 @@ export class EmployeeServiceService {
       contactPreference: 'Email',
       dateOfBirth: new Date('08/27/1994'),
       department: '3',
-      isActive: true, 
+      isActive: true,
       photoPath: 'assets/image/dany.png',
       // password:'',
       // confirmPassword:'',
@@ -54,6 +54,10 @@ export class EmployeeServiceService {
 
   getAll(): Employee[] {
     return this.employees;
+  }
+
+  getEmployee(id: number): Employee {
+    return this.employees.find((e) => e.id === id);
   }
 
   create(employee: Employee) {
