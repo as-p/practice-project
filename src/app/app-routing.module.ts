@@ -1,3 +1,4 @@
+import { EmployeeDetailsComponent } from './employee/employee-details.component';
 import { CanDeactiveGaurdService } from './employee/cemp-can-deactive-gaurd.service';
 import { CreateEmployeeComponent } from './employee/create-employee.component';
 import { ListemployeeComponent } from './employee/listemployee.component';
@@ -11,6 +12,8 @@ const routes: Routes = [
     component: CreateEmployeeComponent,
     canDeactivate: [CanDeactiveGaurdService],
   },
+  { path: 'employee/:id', component: EmployeeDetailsComponent },
+
   { path: '', redirectTo: '/list', pathMatch: 'full' },
 ];
 

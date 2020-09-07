@@ -1,11 +1,13 @@
-<h2 *ngIf="employeeDetails">
+<!-- <h2 *ngIf="employeeDetails">
   {{ employeeDetails?.name + " " + employeeDetails?.id }}
-</h2>
+</h2> -->
 <div *ngFor="let employee of employees">
-  <display-employee-details
-    [employee]="employee"
-    (notify)="notifyEvent($event)"
-  ></display-employee-details>
+  <div (click)="onClick(employee.id)" class="pointer">
+    <display-employee-details
+      [employee]="employee"
+      (notify)="notifyEvent($event)"
+    ></display-employee-details>
+  </div>
 </div>
 
 <!-- <button class="btn btn-primary" (click)="nextEmployee()">next >></button>
