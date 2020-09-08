@@ -1,7 +1,14 @@
 <!-- <h2 *ngIf="employeeDetails">
   {{ employeeDetails?.name + " " + employeeDetails?.id }}
 </h2> -->
-<div *ngFor="let employee of employees">
+<div class="form-group">
+  <input
+    type="text"
+    [(ngModel)]="serachTearm"
+    placeholder="Enter Name to Search"
+  />
+</div>
+<div *ngFor="let employee of employees | employeeFilter: serachTearm">
   <div (click)="onClick(employee.id)" class="pointer">
     <display-employee-details
       [employee]="employee"

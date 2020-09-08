@@ -27,7 +27,7 @@ export class EmployeeDetailsComponent implements OnInit {
   }
 
   viewNextEmployee() {
-    if (this._id < 3) {
+    if (this._id < 4) {
       ++this._id;
     } else {
       this._id = 1;

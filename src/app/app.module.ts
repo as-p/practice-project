@@ -1,3 +1,4 @@
+import { EmployeeSearchFilter } from './employee/employee-custom-filter.pipe';
 import { CanDeactiveGaurdService } from './employee/cemp-can-deactive-gaurd.service';
 import { ConfirmPasswordValidator } from './employee/shared/confirm-validator.directive';
 import { SelectValidatorDirective } from './employee/shared/select-validator.directive';
@@ -24,6 +25,7 @@ import { EmployeeDetailsComponent } from './employee/employee-details.component'
     ConfirmPasswordValidator,
     DisplayEmployeeDetailsComponent,
     EmployeeDetailsComponent,
+    EmployeeSearchFilter,
   ],
   imports: [
     BrowserModule,

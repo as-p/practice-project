@@ -59,6 +59,9 @@ export class EmployeeServiceService {
   getEmployee(id: number): Employee {
     return this.employees.find((e) => e.id === id);
   }
+  getLenght() {
+    return this.employees.length;
+  }
 
   create(employee: Employee) {
     this.employees.push(employee);

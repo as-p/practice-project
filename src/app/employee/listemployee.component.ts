@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListemployeeComponent implements OnInit {
   employees: Employee[];
+  serachTearm: string;
   employeeDetails: Employee;
   // employeeListChange: Employee;
   // empListTrack = 1;
@@ -29,7 +30,7 @@ export class ListemployeeComponent implements OnInit {
   }
 
   onClick(employeeID: number) {
-    this._router.navigate(['/employee', employeeID]);//Navigate the route with param
+    this._router.navigate(['/employee', employeeID]); //Navigate the route with param
   }
 
   // nextEmployee() {

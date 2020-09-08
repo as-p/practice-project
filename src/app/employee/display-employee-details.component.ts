@@ -29,7 +29,7 @@ export class DisplayEmployeeDetailsComponent implements OnInit {
   constructor(private _route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.selectedId = +this._route.snapshot.paramMap.get('id');
+    this.selectedId = +this._route.snapshot.paramMap.get('id'); //get angular optional route param
   }
 
   handleClick() {

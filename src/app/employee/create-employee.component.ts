@@ -57,7 +57,9 @@ export class CreateEmployeeComponent implements OnInit {
     this.previePhoto = !this.previePhoto;
   }
   saveEmployee() {
-    this._empService.create(this.employee);
+    this.employee.id = 1 + this._empService.getLenght();
+    this._empService.create(Object.assign({}, this.employee));
+    this.CreateEmployeeComponent.reset();
     this._route.navigate(['list']);
   }
 }
