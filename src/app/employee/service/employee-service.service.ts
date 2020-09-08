@@ -43,7 +43,7 @@ export class EmployeeServiceService {
       contactPreference: 'Email',
       dateOfBirth: new Date('08/27/1994'),
       department: '3',
-      isActive: true,
+      isActive: false,
       photoPath: 'assets/image/dany.png',
       // password:'',
       // confirmPassword:'',
