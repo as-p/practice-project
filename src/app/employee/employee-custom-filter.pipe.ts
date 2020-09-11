@@ -1,7 +1,7 @@
 import { Employee } from './../models/employee.model';
 import { PipeTransform, Pipe } from '@angular/core';
 
-@Pipe({ name: 'employeeFilter' })
+@Pipe({ name: 'employeeFilter', pure: false })
 export class EmployeeSearchFilter implements PipeTransform {
   transform(employee: Employee[], serachTearm: string): Employee[] {
     if (!employee || !serachTearm) return employee;

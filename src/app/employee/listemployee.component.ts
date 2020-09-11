@@ -33,6 +33,13 @@ export class ListemployeeComponent implements OnInit {
     this._router.navigate(['/employee', employeeID]); //Navigate the route with param
   }
 
+  changeEmployeeName() {
+    this.employees[0].name = 'Sansa Stark';
+    // const newEmployees: Employee[] = Object.assign({}, this.employees);
+    // newEmployees[0].name = 'Sansa Stark';
+    // this.employees = newEmployees;
+  }
+
   // nextEmployee() {
   //   // console.log(this.employees.length);
 

@@ -8,6 +8,11 @@
     placeholder="Enter Name to Search"
   />
 </div>
+<div class="form-group">
+  <button (click)="changeEmployeeName()" class="=btn btn-primary">
+    Change Employee Name
+  </button>
+</div>
 <div *ngFor="let employee of employees | employeeFilter: serachTearm">
   <div (click)="onClick(employee.id)" class="pointer">
     <display-employee-details
